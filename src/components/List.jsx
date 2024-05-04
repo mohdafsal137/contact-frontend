@@ -28,20 +28,20 @@ function List() {
 
   
   return (
-    <div>
-      <h2 className='text-center'>Contacts</h2>
+    <div className='bg-black p-2'>
+      <h2 className='text-center text-light'>Contacts</h2>
       
-           <Row>
+           <Row className=''>
            {
                 users.map((item)=>(
-                  <Col sm={12} md={6} lg={4} xl={3}>
+                  <Col sm={12} md={6} lg={4} xl={3} className=''>
                    
                      <div  className="container">
-            <div className="shadow border rounded text-center m-3">
+            <div className="shadow border rounded text-center text-black  m-3 " style={{backgroundColor:'whitesmoke'}}>
                       <div >
                       
                       <Link  to={`view/${item.id}`}>
-                      <img className='rounded-pill m-2' src={item.img} alt="" width={'150px'} />
+                      <img className='rounded-pill m-2' src="https://th.bing.com/th/id/R.7b528d6309ee84dc0d8fbffef7cc9347?rik=2yRGcUoANndcJQ&riu=http%3a%2f%2fclipart-library.com%2fimages%2fpT7K76y8c.jpg&ehk=DzUoQ28TD73H6PKsFR8wgmg6uljiKEGEuc1oN0pKQj0%3d&risl=&pid=ImgRaw&r=0" alt="" width={'170px'} height={'150px'} />
                       </Link>
                       <h5 className='m-2'>ID : {item.id}</h5> 
                       <h5><img src="https://www.freeiconspng.com/uploads/name-people-person-user-icon--icon-search-engine-1.png" alt="" width={'15px'} className='m-2' />{item.username}</h5>
@@ -50,8 +50,8 @@ function List() {
                     </div>
                       <hr />
                       <div  className='m-2'>
-                         <Link style={{textDecoration:'none',color:'black'}} to={`edit/${item.id}`}><button className='btn'><i className='fa-solid fa-pen fs-5'></i></button></Link>
-                         <button onClick={()=>deleteEmp(item.id)} className='btn'><i className='fa-solid fa-trash fs-5'></i></button>
+                         <Link style={{textDecoration:'none'}} to={`edit/${item.id}`}><button className='btn'><i className='fa-solid fa-pen fs-5'></i></button></Link>
+                         <button  className='btn'><i onClick={()=>deleteEmp(item.id)} className='fa-solid fa-trash fs-5 text-danger'></i></button>
                      </div>
                      </div>
                      </div>
@@ -64,7 +64,7 @@ function List() {
               
            
 <div className='text-center m-3'>
-          <Link to={'/add'}><button className='btn btn-info rounded-pill'>Add Contacts</button></Link>
+          <Link to={'/add'}><button className='btn btn-success rounded-pill'>Add Contacts</button></Link>
   
 </div>
     </div>

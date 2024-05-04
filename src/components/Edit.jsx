@@ -10,7 +10,6 @@ const [eid,setId]=useState("")
    const [conphone,setPhone]=useState("")
    const [conemail,setEmail]=useState("")
    const[address,setaddress]=useState("")
-   const[img,setimg]=useState("")
 
      const {id}=useParams()
      console.log(id);//4
@@ -23,7 +22,6 @@ const [eid,setId]=useState("")
      setPhone(result.data.users.phone)
      setEmail(result.data.users.email)
      setaddress(result.data.users.address)
-     setimg(result.data.users.img)
    }
    useEffect(()=>{
      viewCon(id)
@@ -41,8 +39,7 @@ const [eid,setId]=useState("")
          username:conusername,
          phone:conphone,
          email:conemail,
-         address:address,
-         img:img
+         address:address
        }
          const result= await axios.post(`${base_url}/update-user/${id}`,body)
          console.log(result);
@@ -51,14 +48,14 @@ const [eid,setId]=useState("")
      }
 
   return (
-    <div>
-      <h2 className='text-center m-3'>Edit Contact</h2>
+    <div className='bg-black p-2'>
+      <h2 className='text-center text-light m-3'>Edit Contact</h2>
       <div className="row">
         <div className="col-3"></div>
-      <div className="col-6 container text-center m-3 p-3 border rounded shadow">
+      <div className="col-6 container text-center m-3 p-3 bg-light border rounded shadow">
       <label>
        <input type="file" style={{display:'none'}} />
-       <img className='rounded-pill m-2' onChange={(e)=>setimg(e.target.value)} value={img} src={img} alt="" width={'150px'} />
+       <img className='rounded-pill m-2'  src="https://genmar.co.uk/wp-content/uploads/2021/11/Cameron.png" alt="" width={'150px'} />
        </label>        
          
         <MDBInput label='ID' onChange={(e)=>setId(e.target.value)} value={eid} className='shadow'  id='form' type='text' />

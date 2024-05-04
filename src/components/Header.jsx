@@ -17,10 +17,9 @@ function Header() {
     const [openBasic, setOpenBasic] = useState(false);
   return (
     <div>
-<MDBNavbar expand='lg' bgColor='primary disabled'>
+<MDBNavbar expand='lg' bgColor='black'>
       <MDBContainer fluid>
-        <MDBNavbarBrand href='#'><img src="https://cdn-1.webcatalog.io/catalog/constant-contact/constant-contact-icon.png" alt="" width={'50px'} /></MDBNavbarBrand>
-
+<h3 className='text-light'>YETI</h3>
         <MDBNavbarToggler
           aria-controls='navbarSupportedContent'
           aria-expanded='false'
@@ -33,32 +32,32 @@ function Header() {
         <MDBCollapse navbar open={openBasic}>
           <MDBNavbarNav className=' text-light mr-auto mb-2 mb-lg-0'>
             <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page' className='text-dark' href='#'>
-                <Link style={{textDecoration:'none',color:'white'}} to={'/'}>Home</Link>
-              </MDBNavbarLink>
+              
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page' className='text-light' href='#'>
-                Features
-              </MDBNavbarLink>
+             
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page' className='text-light' href='#'>
-              <Link style={{textDecoration:'none',color:'white'}} to={'/list'}>Contacts</Link>
-              </MDBNavbarLink>
+              
             </MDBNavbarItem>
            
 
            
           </MDBNavbarNav>
 
-       <div className='d-flex m-4 p-3'>
-         <div className='m-2'>
-         <button className='btn btn-info rounded'>Signin</button>
-         </div>
-         <div className='m-2'>
-         <button className='btn btn-success rounded'>Signup</button>
-         </div>
+       <div className='d-flex m-4 p-5' >
+       <MDBNavbarLink active aria-current='page' className='text-dark' href='#'>
+                <Link style={{textDecoration:'none',color:'white'}} className='p-2' to={'/'}>Home</Link>
+              </MDBNavbarLink>
+
+              <MDBNavbarLink active aria-current='page' className='text-light' href='#'>
+                <Link style={{textDecoration:'none',color:'white'}} className='p-2'>Features</Link>
+              </MDBNavbarLink>
+
+              <MDBNavbarLink active aria-current='page' className='text-light' href='#'>
+              <Link style={{textDecoration:'none',color:'white'}} className='p-2' to={'/list'}>Contacts</Link>
+              </MDBNavbarLink>
+
        </div>
         </MDBCollapse>
       </MDBContainer>
